@@ -11,7 +11,7 @@ export default function App() {
     {
       id:1, 
       title:'Бойл_1', 
-      img: '',
+      img: 'b01.jpg',
       desc: 'text text text text text text text text text text text text text text text text text text', 
       // desc текст о товаре
       category: 'Бойлы',
@@ -21,7 +21,7 @@ export default function App() {
     {
       id:2, 
       title:'Бойл_2', 
-      img: '',
+      img: 'b02.jpg',
       desc: 'text text text text text text text text text text text text text text text text text text', 
       // desc текст о товаре
       category: 'Бойлы',
@@ -31,7 +31,7 @@ export default function App() {
     {
       id:3, 
       title:'Бойл_3', 
-      img: '',
+      img: 'b03.jpg',
       desc: 'text text text text text text text text text text text text text text text text text text', 
       // desc текст о товаре
       category: 'Бойлы',
@@ -40,8 +40,8 @@ export default function App() {
 
     {
       id:4, 
-      title:'Бойл_4', 
-      img: '',
+      title:'Pop-ups_4', 
+      img: 'c1.jpg',
       desc: 'text text text text text text text text text text text text text text text text text text', 
       // desc текст о товаре
       category: 'Бойлы',
@@ -50,8 +50,8 @@ export default function App() {
 
     {
       id:5, 
-      title:'Смеси_5', 
-      img: '',
+      title:'Pop-ups_5', 
+      img: 'c2.jpg',
       desc: 'text text text text text text text text text text text text text text text text text text', 
       // desc текст о товаре
       category: 'Смеси',
@@ -60,8 +60,8 @@ export default function App() {
 
     {
       id:6, 
-      title:'Смеси_6', 
-      img: '',
+      title:'Pop-ups_6', 
+      img: 'c3.jpg',
       desc: 'text text text text text text text text text text text text text text text text text text', 
       // desc текст о товаре
       category: 'Смеси',
@@ -70,8 +70,8 @@ export default function App() {
 
     {
       id:7, 
-      title:'Смеси_7', 
-      img: '',
+      title:'Active Pop-Ups_7', 
+      img: 'c4.jpg',
       desc: 'text text text text text text text text text text text text text text text text text text', 
       // desc текст о товаре
       category: 'Смеси',
@@ -80,8 +80,8 @@ export default function App() {
 
     {
       id:8, 
-      title:'Арома-добавка_8', 
-      img: '',
+      title:'Active Pop-Ups_8', 
+      img: 'c5.jpg',
       desc: 'text text text text text text text text text text text text text text text text text text', 
       // desc текст о товаре
       category: 'Аромадобавки',
@@ -90,8 +90,8 @@ export default function App() {
 
     {
       id:9, 
-      title:'Арома-добавка_9', 
-      img: '',
+      title:'Active Pop-Ups_9', 
+      img: 'c6.jpg',
       desc: 'text text text text text text text text text text text text text text text text text text', 
       // desc текст о товаре
       category: 'Аромадобавки',
@@ -100,8 +100,8 @@ export default function App() {
 
     {
       id:10, 
-      title:'Арома-добавка_10', 
-      img: '',
+      title:'Active Pop-Ups_10', 
+      img: 'c7.jpg',
       desc: 'text text text text text text text text text text text text text text text text text text', 
       // desc текст о товаре
       category: 'Аромадобавки',
