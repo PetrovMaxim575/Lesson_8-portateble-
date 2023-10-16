@@ -7,7 +7,9 @@ import Items from './components/Items';
 
 export default function App() {
 
+  const [orders, setOrders] = useState([]);
   const [items,setItems] =useState([
+    
     {
       id:1, 
       title:'Бойл_1', 
@@ -110,15 +112,23 @@ export default function App() {
 
   ])
 
+  const addToOrder= (item3) => {
+    if(!orders.some((el)=>el.id===item3.id)){
+      setOrders([...orders,item3]);
+    }
+  };
+
   return (
     <div className='wrapper'>
-      <Header />
+      <Header orders={orders}/>
 
-      <Items allItems={items}/>
+      <Items allItems={items} onAdd={addToOrder}/>
 
       <Footer />
     </div>
   );
+
+
 }
 
 // { {items} - это то что будем передавать из "const [items," ... items= это просто похожее название, что бы не путаться}

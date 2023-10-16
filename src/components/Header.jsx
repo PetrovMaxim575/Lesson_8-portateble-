@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import {BsBasket2} from 'react-icons/bs'
+import Orders from './Orders.jsx';
 
-export default function Header(){
+export default function Header(props){
     let[cartOpen,setCartOpen] = useState(false);
     // делаем действие для кнопки
 
@@ -11,7 +12,7 @@ export default function Header(){
 
             <div>
                 <span className='logo'>Dosidicus Baits</span>
-            </div>
+            
             <ul className="nav">
                 <li>Про нас</li>
                 <li>Контакты</li>
@@ -20,6 +21,22 @@ export default function Header(){
             </ul>
             <BsBasket2 onClick = {() => setCartOpen(cartOpen=!cartOpen)} 
             className={`shop-cart-button ${cartOpen && 'active'}`} />
+            
+            {/* ниже делаем окошко всплывающее, товары добавленые в корзину или их отсутствие */}
+            {cartOpen && (
+                <div className="shop-cart">
+                    {/* создали див нажимаем на иконку - мы делали изменение состояние на притивоположное, ранее то что писали для корзины (!булиан тру фолс) одновременно с этим запускаем ШОП-КАРТ */}
+                    
+                    {props.orders.map(el => (
+                        <Orders key={el.id} item={el}/>
+                        ))}
+
+
+                </div>
+            )}
+
+            </div>
+            
 
             {/* =!cartOpen - это значит что мы зададим противоположное значение, было false а при нажатии станет true
             мы могли прописать так: cartOpen=true --> но в таком случае нам бы пришлось отдельно прописывать обратную команду для возврата в false состояние, получилась бы лишняя строка лишняя работа */}

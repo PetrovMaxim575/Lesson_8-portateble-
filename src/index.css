@@ -18,6 +18,12 @@ body {
 
 }
 
+header {
+    position: relative;
+    /* наш хедер выступит родительски классом окошка корзины и мы сможем размещаитьт это окошко как захотим
+    header .shop-cart */
+}
+
 header .logo {
     font-weight: 500;
     font-size: 25px;
@@ -104,11 +110,58 @@ header {
     border-radius: 0 0 30px 30px;
 }
 
+header .shop-cart{
+    position: absolute;
+    top: 30px;
+    right: 0;
+    width: 450px;
+    background: white;
+    border-radius: 10px;
+    z-index: 10;
+    /* сделаем тени, заходим на сайт БОКС ШЕДОУ ГЕНЕРАТОР */
+    -webkit-box-shadow: 1px 6px 8px 5px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 1px 6px 8px 5px rgba(34, 60, 80, 0.2);
+    box-shadow: 1px 6px 8px 5px rgba(34, 60, 80, 0.2);
+    padding: 20px;
+    padding-bottom: 0;
+}
+
+header .shop-cart-button {
+    float: right;
+    cursor: pointer;
+
+}
+
+header .shop-cart .item {
+    width: 100%;
+    float: left;
+    margin-bottom: 20px;
+}
+
+header .shop-cart .item img {
+    width: 70px;
+    float: left;
+    margin-right: 20px;
+}
+
+header .shop-cart .item h2 {
+    color: black;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+header .shop-cart .item b {
+    color: black;
+    font-weight: 600;
+}
 
 footer {
     margin-top: 30px;
     text-align: center;
     background: rgb(82, 78, 43);
+    height: 150px;
+    border-radius: 30px 30px 0 0;
+
 } 
 
 main {
@@ -149,7 +202,7 @@ main .item img:hover {
 
 main .item:hover {
     box-shadow: 0 0px 40px rgb(245, 255, 61);
-    transition: box-shadow 500ms ease;
+    transition: box-shadow 100ms ease;
 }
 
 
@@ -172,17 +225,17 @@ main .add-to-cart {
     bottom: 20px;
     background: yellow;
     color: rgb(61, 60, 37);
-    width: 35px;
+    width: 150px;
     height: 35px;
     text-align: center;
     line-height: 35px;
     /* лайн-хей - высота линии, межстрочный инттервал, относительно базоыой линии шрифта
     для того что бы текст был по центру и не нарушал при этом интервал */
-    border-radius: 50%;
+    border-radius: 20px;
     cursor: pointer;
     /* если не поставим - пользователь одумает что у него забаговалась кнопка и она не наживается - при наведении кнопка будет продиматься - изменит курсор со стрелочки на "пальчик - палец руку" */
     font-weight: 600;
-    transition: transform 500ms ease;
+    transition: transform 80ms ease;
 }
 
 main .add-to-cart:hover {
