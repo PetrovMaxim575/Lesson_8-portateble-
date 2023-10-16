@@ -12,7 +12,7 @@ export default function App() {
       id:1, 
       title:'Бойл_1', 
       img: 'b01.jpg',
-      desc: 'text text text text text text text text text text text text text text text text text text', 
+      desc: 'text text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text text', 
       // desc текст о товаре
       category: 'Бойлы',
       price: '1500',     
@@ -22,7 +22,7 @@ export default function App() {
       id:2, 
       title:'Бойл_2', 
       img: 'b02.jpg',
-      desc: 'text text text text text text text text text text text text text text text text text text', 
+      desc: 'text text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text text', 
       // desc текст о товаре
       category: 'Бойлы',
       price: '1200',     
@@ -32,7 +32,7 @@ export default function App() {
       id:3, 
       title:'Бойл_3', 
       img: 'b03.jpg',
-      desc: 'text text text text text text text text text text text text text text text text text text', 
+      desc: 'text text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text text', 
       // desc текст о товаре
       category: 'Бойлы',
       price: '1100',     
@@ -42,7 +42,7 @@ export default function App() {
       id:4, 
       title:'Pop-ups_4', 
       img: 'c1.jpg',
-      desc: 'text text text text text text text text text text text text text text text text text text', 
+      desc: 'text text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text text', 
       // desc текст о товаре
       category: 'Бойлы',
       price: '1000',     
@@ -52,7 +52,7 @@ export default function App() {
       id:5, 
       title:'Pop-ups_5', 
       img: 'c2.jpg',
-      desc: 'text text text text text text text text text text text text text text text text text text', 
+      desc: 'text text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text text', 
       // desc текст о товаре
       category: 'Смеси',
       price: '1000',     
@@ -62,7 +62,7 @@ export default function App() {
       id:6, 
       title:'Pop-ups_6', 
       img: 'c3.jpg',
-      desc: 'text text text text text text text text text text text text text text text text text text', 
+      desc: 'text text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text text', 
       // desc текст о товаре
       category: 'Смеси',
       price: '1000',     
@@ -70,9 +70,9 @@ export default function App() {
 
     {
       id:7, 
-      title:'Active Pop-Ups_7', 
+      title:'Ликвид_7', 
       img: 'c4.jpg',
-      desc: 'text text text text text text text text text text text text text text text text text text', 
+      desc: 'text text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text text', 
       // desc текст о товаре
       category: 'Смеси',
       price: '1000',     
@@ -80,9 +80,9 @@ export default function App() {
 
     {
       id:8, 
-      title:'Active Pop-Ups_8', 
+      title:'Ликвид_8', 
       img: 'c5.jpg',
-      desc: 'text text text text text text text text text text text text text text text text text text', 
+      desc: 'text text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text text', 
       // desc текст о товаре
       category: 'Аромадобавки',
       price: '1000',     
@@ -90,9 +90,9 @@ export default function App() {
 
     {
       id:9, 
-      title:'Active Pop-Ups_9', 
+      title:'Ликвид_9', 
       img: 'c6.jpg',
-      desc: 'text text text text text text text text text text text text text text text text text text', 
+      desc: 'text text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text text', 
       // desc текст о товаре
       category: 'Аромадобавки',
       price: '1000',     
@@ -100,9 +100,9 @@ export default function App() {
 
     {
       id:10, 
-      title:'Active Pop-Ups_10', 
+      title:'Ликвид_10', 
       img: 'c7.jpg',
-      desc: 'text text text text text text text text text text text text text text text text text text', 
+      desc: 'text text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text text', 
       // desc текст о товаре
       category: 'Аромадобавки',
       price: '1000',     

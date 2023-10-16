@@ -22,6 +22,7 @@ header .logo {
     font-weight: 500;
     font-size: 25px;
 
+
 }
 
 header ul.nav {
@@ -44,6 +45,17 @@ header ul.nav li:hover {
     /* прозрачность */
 }
 
+header .shop-cart-button {
+    float: right;
+    cursor: pointer;
+    transition: color 500ms ease;
+}
+
+header .shop-cart-button:hover, 
+header .shop-cart-button.active {
+    color: yellow;
+}
+
 header .presentation {
     margin: 50px 0;
     background: url("../public/images/header.jpg") no-repeat;
@@ -55,6 +67,7 @@ header .presentation {
     background-color: rgb(250, 253, 255);
     position: relative;
     /* маска поверх - тонировка иными словами */
+    border-radius: 0 0 30px 30px;
 }
 
 header .presentation::after {
@@ -68,6 +81,7 @@ header .presentation::after {
     width: 300px;
     font-size: 40px;
     font-weight: 500;
+    text-shadow: 0 0 5px black;
 
 }
 
@@ -82,18 +96,104 @@ header .presentation::before {
     width: 300px;
     font-size: 30px;
     font-weight: 200;
+    text-shadow: 0 0 5px black;
 }
 
+header {
+    background: rgb(34, 34, 34);
+    border-radius: 0 0 30px 30px;
+}
+
+
 footer {
-    margin: 30px;
+    margin-top: 30px;
     text-align: center;
+    background: rgb(82, 78, 43);
 } 
 
+main {
+    display: flex;
+    /* что бы у нас сделать страницу адаптивной */
+    width: 100%;
+    flex-wrap: wrap;
+    /* врап - если страница будет умеьншаться у нас не возникнет проблем */
+    justify-content: space-between;
+}
+
+main .item {
+    width: 30%;
+    margin-bottom: 50px;
+    background: rgb(172, 167, 95);
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    /* overflow: hidden; - не даст увеличивающейся картинки выйти за границы ДИВ блока карточки
+    
+    свойство которое управляет отображением нашего содержэания блока, если оно полностью не помещается, или выходит за область размеров блока
+    
+    хидден - все отображается только внутри элемента, все остальное будет крыто*/
+
+}
+/* выше в класснэйм=итем в итем.джисикс */
+
+main .item img {
+    width: 100%;
+    border-radius: 30px 30px 0 0;
+    transition: transform 500ms ease;
+}
+
+main .item img:hover {
+    transform: scale(1.1);
+    
+}
+
+main .item:hover {
+    box-shadow: 0 0px 40px rgb(245, 255, 61);
+    transition: box-shadow 500ms ease;
+}
 
 
+main h2,
+main p,
+main b {
+    margin: 10px 20px;
+    color: rgb(61, 60, 37);
+    padding-bottom: 40px;
+}
 
+main b {
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 2px black;
+}
 
+main .add-to-cart {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    background: yellow;
+    color: rgb(61, 60, 37);
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    /* лайн-хей - высота линии, межстрочный инттервал, относительно базоыой линии шрифта
+    для того что бы текст был по центру и не нарушал при этом интервал */
+    border-radius: 50%;
+    cursor: pointer;
+    /* если не поставим - пользователь одумает что у него забаговалась кнопка и она не наживается - при наведении кнопка будет продиматься - изменит курсор со стрелочки на "пальчик - палец руку" */
+    font-weight: 600;
+    transition: transform 500ms ease;
+}
 
+main .add-to-cart:hover {
+    transform: scale(1.1) translateY(-5px);
+}
+
+/* main .item:hover {
+    transform: scale(1.04);
+    box-shadow: 0 0px 40px rgba(255, 248, 113, 0.7);
+    /* в этом примере я при наведении увеличиваю весь блок карточки ДИВ при наведении, также БОКСШАДОВ - использую для подсвтеки блока при наведении 
+} */
 
 
 /* font-family: ---> поиск: нажать ctrl+ссылка шрифта, откроется страница с данными шрифта, оттуда можно взять */
