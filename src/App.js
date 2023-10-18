@@ -67,7 +67,7 @@ export default function App() {
       desc: 'text text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text text', 
       // desc текст о товаре
       category: 'Смеси',
-      price: '1000',     
+      price: '1000.99',     
     },
 
     {
@@ -87,7 +87,7 @@ export default function App() {
       desc: 'text text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text text', 
       // desc текст о товаре
       category: 'Аромадобавки',
-      price: '1000',     
+      price: '1000.99',     
     },
 
     {
@@ -112,15 +112,22 @@ export default function App() {
 
   ])
 
+  // метод some - проверяет надлличие товара, если он есть то значение товара ТРУ и он не доабвит нам его больше, изюегание ДДоС атак
   const addToOrder= (item3) => {
     if(!orders.some((el)=>el.id===item3.id)){
       setOrders([...orders,item3]);
     }
+
   };
+
+  const deleteOrder = (id) => {
+    setOrders(orders.filter((el) => el.id !== id));
+  }
+
 
   return (
     <div className='wrapper'>
-      <Header orders={orders}/>
+      <Header orders={orders} onDelete={deleteOrder}/>
 
       <Items allItems={items} onAdd={addToOrder}/>
 
