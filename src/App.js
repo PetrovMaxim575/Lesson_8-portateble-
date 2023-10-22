@@ -2,12 +2,28 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import { useState } from 'react';
 import Items from './components/Items';
-
+import Categories from './components/Categories';
+import { useEffect } from 'react';
+import ShowFullItem from './components/showFullItem';
 
 
 export default function App() {
 
   const [orders, setOrders] = useState([]);
+
+  // у нас будет еще одна переменная которая будет помогать нам, что бы при фильтрации появлялись только определенные товары той категории которые мы выбрали, мыд обалвяем между Итемс и Ордерс - она будет работать тоже с ЮзСтэйт - изменения состояния
+  const [currentItems,setCurrentItems]=useState([]);
+  // ========================================================================
+
+  // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<ДОБАВЛЕНИЕ ЭФФЕКТА (НИЖЕ)>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+  // сейчас мы сделаем что бы при нажатии на карточку товара, он выходил на передний план и отображался более крупно - сам элемент - помогало более подробно ознакомиться с товаром - всплывающаая карточка при нажатии
+
+  const [showFullItem, setShowFullItem] = useState(false);
+  // пописываем значение False - что бы по умолчанию у нас товары не отображался крупно и вообще не отображался
+
+  // ========================================================================
+
+
   const [items,setItems] =useState([
     
     {
@@ -16,7 +32,7 @@ export default function App() {
       img: 'b01.jpg',
       desc: 'text text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text text', 
       // desc текст о товаре
-      category: 'Бойлы',
+      category: 'boiles',
       price: '1500',     
     },
 
@@ -26,7 +42,7 @@ export default function App() {
       img: 'b02.jpg',
       desc: 'text text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text text', 
       // desc текст о товаре
-      category: 'Бойлы',
+      category: 'boiles',
       price: '1200',     
     },
 
@@ -36,7 +52,7 @@ export default function App() {
       img: 'b03.jpg',
       desc: 'text text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text text', 
       // desc текст о товаре
-      category: 'Бойлы',
+      category: 'boiles',
       price: '1100',     
     },
 
@@ -46,7 +62,7 @@ export default function App() {
       img: 'c1.jpg',
       desc: 'text text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text text', 
       // desc текст о товаре
-      category: 'Бойлы',
+      category: 'popups',
       price: '1000',     
     },
 
@@ -56,7 +72,7 @@ export default function App() {
       img: 'c2.jpg',
       desc: 'text text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text text', 
       // desc текст о товаре
-      category: 'Смеси',
+      category: 'popups',
       price: '1000',     
     },
 
@@ -66,7 +82,7 @@ export default function App() {
       img: 'c3.jpg',
       desc: 'text text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text text', 
       // desc текст о товаре
-      category: 'Смеси',
+      category: 'popups',
       price: '1000.99',     
     },
 
@@ -76,7 +92,7 @@ export default function App() {
       img: 'c4.jpg',
       desc: 'text text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text text', 
       // desc текст о товаре
-      category: 'Смеси',
+      category: 'liquids',
       price: '1000',     
     },
 
@@ -86,7 +102,7 @@ export default function App() {
       img: 'c5.jpg',
       desc: 'text text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text text', 
       // desc текст о товаре
-      category: 'Аромадобавки',
+      category: 'liquids',
       price: '1000.99',     
     },
 
@@ -96,7 +112,7 @@ export default function App() {
       img: 'c6.jpg',
       desc: 'text text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text text', 
       // desc текст о товаре
-      category: 'Аромадобавки',
+      category: 'liquids',
       price: '1000',     
     },
 
@@ -106,13 +122,19 @@ export default function App() {
       img: 'c7.jpg',
       desc: 'text text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text text', 
       // desc текст о товаре
-      category: 'Аромадобавки',
+      category: 'aroma',
       price: '1000',     
     }
 
   ])
-
   // метод some - проверяет надлличие товара, если он есть то значение товара ТРУ и он не доабвит нам его больше, изюегание ДДоС атак
+
+  // ниже - используем хук ЮзЭффект - что бы у нас при первой загрузке страницы сразу отображались все товары, предварительно ЮзЭффект подключаем в голове документа из библиотеки Реакт
+  useEffect(()=> {
+    setCurrentItems(items);
+  }, [items]);
+
+
   const addToOrder= (item3) => {
     if(!orders.some((el)=>el.id===item3.id)){
       setOrders([...orders,item3]);
@@ -122,14 +144,49 @@ export default function App() {
 
   const deleteOrder = (id) => {
     setOrders(orders.filter((el) => el.id !== id));
+  };
+
+  // делаем ф.ционал для наших кнопок "СОРТИРОВОК ПО КАТЕГООРИЯМ"
+
+  const chooseCategory=(category)=>{
+    // делаем проверку
+    if(category==="all"){
+      setCurrentItems(items);
+    }
+    else{
+      setCurrentItems(items.filter((el)=> el.category === category));
+    }
+  }
+
+  // сейчас будем прописывать логику увеличения карточки товара при нажатии
+  const onShowItem = (item)=>{
+    setShowFullItem(!showFullItem);
   }
 
 
   return (
     <div className='wrapper'>
       <Header orders={orders} onDelete={deleteOrder}/>
+      {/* добавление компонента категории */}
+      <Categories chooseCategory={chooseCategory}/>
 
-      <Items allItems={items} onAdd={addToOrder}/>
+      {/* <Items allItems={items} onAdd={addToOrder}/>
+      было такое значение, тперь мы будем применять сортировку по категориям, и нам необходимо заменить значение {items} на {currentItems} */}
+      <Items allItems={currentItems} 
+      onShowItem={onShowItem}
+      // добавляем ОнШоуИтем в Итемс - что бы добавить укрупненное отображение товара
+      // поскольку вызов будет в Итемс - далее переходим в Итемс джиэсикс - и делаем работу в нем
+      // <<<!!!>>>!!!>>> ссылка в итемс джиисикс
+      onAdd={addToOrder}/>
+      {/* после применения куррентИтемс у нас пропадут все товары со страницы - тоесть у наз загрузка страницы и поскоьку мы не выбрали никакую ктегорию все товары просто скрываются, видимо нам необходимо прописать еще логику, что при загрузке страницы, что бы товары в первую прогрузку отображались даже если мы не успели применить КАТЕГОРИИ */}
+
+      {/* ЗАГРУЗКА СТРАНИЦЫ ПОСЛЕ ФИЛЬТРАЦИИ - ПРОПАЖА ТОВАРОВ!
+      что теперь нам необходимо сделать что бы таокго не было (так же если товара 2 есть прогалы между товарами!)
+
+      как работает у нас есть товары и категории - есть проверка - пока мы не нажмем на кноаку проверка не запуститься и товары неотобразятся, и товары у нас не появятся скрипт не выполнится, мы используем хук эффекта ЮзЭффект - пи запуске страницы у нас сразу будет обображаться ИЗМЕНЕННОЕ состояние сразу Итемсы - будут передаваться, при этом если мы уже начнем работать с категориями будем их менять будет включаться ф.ция выбора категории и будут оборажаться товары которые мы выбрали по определенным категориям, когда хотим вернуться нажиманем на ВСЕ и уже запускается внутри выброра категории ф.ции как раз таки то условие - если мы выброали категорию все - будут выводиться ВСЕ */}
+
+      {/* НИЖЕ - также как и делали открытие корзины, аналогинчая ситуация, при нажатии на товары будет показываться и скрываться всплывающее окно содержиащее товар */}
+      {showFullItem && <ShowFullItem />}
 
       <Footer />
     </div>

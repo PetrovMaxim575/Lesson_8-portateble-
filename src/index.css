@@ -218,6 +218,8 @@ main .item img {
     width: 100%;
     border-radius: 30px 30px 0 0;
     transition: transform 500ms ease;
+    cursor: pointer;
+    /* добавили отображение пальчика - что бы при наведении на картинку у нас показывалось что мы можем на нее нажать */
 }
 
 main .item img:hover {
@@ -288,10 +290,37 @@ header .shop-cart .empty h2 {
     margin-bottom: 20px;
 }
 
+/* редактирование категорий */
 
+.categories div {
+    /* display: inline-block; */
+    /* выравниваем блочные лементы в строку */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    /* я использовал флекс, что бы выронить контент внутри блока див, поскольку контент внутри блока у нас прописывается не отдельным тегом а рпосто как наполенние контейнера */
+    background-color: yellow;
+    color: black;
+    font-weight: 700;
+    width: 90px;
+    height: 20px;
+    border-radius: 30px;
+    padding: 10px 20px;
+    margin-bottom: 45px;
+    margin-right: 15px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    /* transparent - свойство - значение по умолчанию, устанавливает например для цвета фона, что какое то стандарнтое значение для бэкграунд колор, не нужно там добавлять дополнительно что то еще */
+    transition: all 150ms ease;
+}
 
+.categories div:hover {
+    background-color: white;
+    border: 2px solid black;
+    transform: scale(1.1);
+}
 
-
+/* %%%--!!--%%% - добавление стилей для всплывающей карточки на первый план - увеличение товара - на первый план */
 
 
 

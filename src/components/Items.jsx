@@ -6,7 +6,11 @@ export default function Items(props){
         <main>
             
             {props.allItems.map(el=>(
-                <Item key={el.id} item2={el} onAdd={props.onAdd}/>
+                <Item key={el.id} item2={el} onAdd={props.onAdd}
+                // <<<!!!>>>!!!>>> ссылка из App.js из return(Items...)
+                onShowItem={props.onShowItem}   />
+
+                // ###!!!###!!! - далее переходим просто в Итем джиисикс
 
 
 
