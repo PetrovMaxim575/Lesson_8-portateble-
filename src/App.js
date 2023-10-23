@@ -5,6 +5,7 @@ import Items from './components/Items';
 import Categories from './components/Categories';
 import { useEffect } from 'react';
 import ShowFullItem from './components/showFullItem';
+import axios from 'axios';
 
 
 export default function App() {
@@ -23,115 +24,37 @@ export default function App() {
 
   // ========================================================================
 
+  const [fullItem,setFullItem]=useState({});
 
-  const [items,setItems] =useState([
-    
-    {
-      id:1, 
-      title:'Бойл_1', 
-      img: 'b01.jpg',
-      desc: 'text text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text text', 
-      // desc текст о товаре
-      category: 'boiles',
-      price: '1500',     
-    },
 
-    {
-      id:2, 
-      title:'Бойл_2', 
-      img: 'b02.jpg',
-      desc: 'text text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text text', 
-      // desc текст о товаре
-      category: 'boiles',
-      price: '1200',     
-    },
-
-    {
-      id:3, 
-      title:'Бойл_3', 
-      img: 'b03.jpg',
-      desc: 'text text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text text', 
-      // desc текст о товаре
-      category: 'boiles',
-      price: '1100',     
-    },
-
-    {
-      id:4, 
-      title:'Pop-ups_4', 
-      img: 'c1.jpg',
-      desc: 'text text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text text', 
-      // desc текст о товаре
-      category: 'popups',
-      price: '1000',     
-    },
-
-    {
-      id:5, 
-      title:'Pop-ups_5', 
-      img: 'c2.jpg',
-      desc: 'text text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text text', 
-      // desc текст о товаре
-      category: 'popups',
-      price: '1000',     
-    },
-
-    {
-      id:6, 
-      title:'Pop-ups_6', 
-      img: 'c3.jpg',
-      desc: 'text text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text text', 
-      // desc текст о товаре
-      category: 'popups',
-      price: '1000.99',     
-    },
-
-    {
-      id:7, 
-      title:'Ликвид_7', 
-      img: 'c4.jpg',
-      desc: 'text text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text text', 
-      // desc текст о товаре
-      category: 'liquids',
-      price: '1000',     
-    },
-
-    {
-      id:8, 
-      title:'Ликвид_8', 
-      img: 'c5.jpg',
-      desc: 'text text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text text', 
-      // desc текст о товаре
-      category: 'liquids',
-      price: '1000.99',     
-    },
-
-    {
-      id:9, 
-      title:'Ликвид_9', 
-      img: 'c6.jpg',
-      desc: 'text text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text text', 
-      // desc текст о товаре
-      category: 'liquids',
-      price: '1000',     
-    },
-
-    {
-      id:10, 
-      title:'Ликвид_10', 
-      img: 'c7.jpg',
-      desc: 'text text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text text', 
-      // desc текст о товаре
-      category: 'aroma',
-      price: '1000',     
-    }
-
-  ])
+  const [items,setItems] =useState([])
   // метод some - проверяет надлличие товара, если он есть то значение товара ТРУ и он не доабвит нам его больше, изюегание ДДоС атак
 
   // ниже - используем хук ЮзЭффект - что бы у нас при первой загрузке страницы сразу отображались все товары, предварительно ЮзЭффект подключаем в голове документа из библиотеки Реакт
+  
+  // Стандартный ЮзЭффект - заменяем его потому что ставим ДжиСон
+  // useEffect(()=> {
+  //   setCurrentItems(items);
+  // }, [items]);
+
   useEffect(()=> {
-    setCurrentItems(items);
+
+    axios
+      .get("http://localhost:3001/items")
+      // адрес на котором у нас находятся наши товары
+      // адрес ДжиСон сервера на котором находятся наши товары
+
+      // Далее делаем обработчик который выполняет код - если все будет успешно ответ от сервера получен, то выполняется определенный код
+      // ниже прописка обработчика
+      .then((response)=>{
+        setItems(response.data);
+        chooseCategory("all");
+        setCurrentItems(response.data)
+      })
+      // Кэтч - обработчик к ошибке, если данные с сервера не пришли, что бы вывести какуюто информацию об ошибке получения данных с сервера
+      .catch((error)=>{
+        console.error("Ошибка при загрузке данных", error);
+      });
   }, [items]);
 
 
@@ -160,6 +83,7 @@ export default function App() {
 
   // сейчас будем прописывать логику увеличения карточки товара при нажатии
   const onShowItem = (item)=>{
+    setFullItem(item);
     setShowFullItem(!showFullItem);
   }
 
@@ -186,7 +110,7 @@ export default function App() {
       как работает у нас есть товары и категории - есть проверка - пока мы не нажмем на кноаку проверка не запуститься и товары неотобразятся, и товары у нас не появятся скрипт не выполнится, мы используем хук эффекта ЮзЭффект - пи запуске страницы у нас сразу будет обображаться ИЗМЕНЕННОЕ состояние сразу Итемсы - будут передаваться, при этом если мы уже начнем работать с категориями будем их менять будет включаться ф.ция выбора категории и будут оборажаться товары которые мы выбрали по определенным категориям, когда хотим вернуться нажиманем на ВСЕ и уже запускается внутри выброра категории ф.ции как раз таки то условие - если мы выброали категорию все - будут выводиться ВСЕ */}
 
       {/* НИЖЕ - также как и делали открытие корзины, аналогинчая ситуация, при нажатии на товары будет показываться и скрываться всплывающее окно содержиащее товар */}
-      {showFullItem && <ShowFullItem />}
+      {showFullItem && <ShowFullItem onShowItem={onShowItem} onAdd={addToOrder} item={fullItem}/>}
 
       <Footer />
     </div>

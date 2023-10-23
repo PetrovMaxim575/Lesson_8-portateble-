@@ -10,7 +10,7 @@ export default function Items(props){
                 // <<<!!!>>>!!!>>> ссылка из App.js из return(Items...)
                 onShowItem={props.onShowItem}   />
 
-                // ###!!!###!!! - далее переходим просто в Итем джиисикс
+                // ###!!!###!!! - далее переходим просто в Итем джиисикс 
 
 
 
