@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import {BsBasket2} from 'react-icons/bs'
 import Orders from './Orders.jsx';
+import { saveAs } from "file-saver";
+import PriceListPDF from './PriceListPDF.jsx'
+import { Document, Page, Text, View, StyleSheet, pdf } from "@react-pdf/renderer";
 
 const showOrders=(props)=>{ 
     let summa=0; 
@@ -30,10 +33,15 @@ const showNothing=()=>{
         </div>
     )
 }
+
 export default function Header(props){
     let[cartOpen,setCartOpen] = useState(false);
     // делаем действие для кнопки
 
+    const handleDownloadPDF = async () => {
+        const pdfBlob = await pdf(<PriceListPDF items={props.items} />).toBlob();
+        saveAs(pdfBlob, "price.pdf");
+    };
 
     return(
         <header>
@@ -45,7 +53,7 @@ export default function Header(props){
                 <li>Про нас</li>
                 <li>Контакты</li>
                 <li>Кабинет</li>
-                <li>Скачать прайс</li>
+                <li onClick={handleDownloadPDF}>Скачать прайс</li>
             </ul>
             <BsBasket2 onClick = {() => setCartOpen(cartOpen=!cartOpen)} 
             className={`shop-cart-button ${cartOpen && 'active'}`} />

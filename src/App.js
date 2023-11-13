@@ -90,7 +90,7 @@ export default function App() {
 
   return (
     <div className='wrapper'>
-      <Header orders={orders} onDelete={deleteOrder}/>
+      <Header orders={orders} onDelete={deleteOrder} items={items}/>
       {/* добавление компонента категории */}
       <Categories chooseCategory={chooseCategory}/>
 
